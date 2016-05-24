@@ -1,0 +1,182 @@
+    ﻿
+    ElementaryOS安装后的配置记录
+    首先卸载预装
+    邮件应用
+    geary
+    相机
+    snap-photobooth
+    浏览器
+    sudo apt-get purge midori*
+    日历
+    maya-calendar
+
+    应用名称可以到applicattions文件夹下查看
+
+    purge-all
+    sudo apt-get purge  midori* maya-calendar geary simple-scan snap-photobooth 
+
+    install-all
+    sudo apt-get install audacious    --music音乐
+    sudo apt-get install smplayer     --video视频
+    sudo apt-get install x11vnc       --vnc远程协议 
+    先安装fire再安装chrome；防止提示系统无法读取。。。。。什么鬼信息
+    sudo apt-get install firefox                --火狐浏览器
+    sudo apt-get install google-chrome-stable   --google浏览器
+    记得给phpstorm文件夹全部权限
+    安装Tweaks：设置组件
+        sudo apt-add-repository ppa:mpstark/elementary-tweaks-daily
+        sudo apt-get update
+        sudo apt-get install elementary-tweaks
+    安装Gparted：分区软件
+        sudo apt-get install gparted
+
+    安装SqliteMan：SQLiite3可视化工具
+        sudo apt-get install sqliteman
+
+    安装前端开发工具:Bracket
+    sudo add-apt-repository ppa:webupd8team/brackets
+    sudo apt-get update
+    sudo apt-get install brackets
+
+    安装Vim：
+        sudo apt-get install vim
+        安装C++：
+        sudo apt-get install monodevelop 
+        sudo apt-get install g++
+        sudo apt-get install xterm (linux下的win终端模拟器->控制台)
+        安装Gcolor2：
+        sudo apt-get install gcolor2
+
+    配置Scratch的桌面文件，以便能够使用中文输入法：
+    原来的样子：
+    Exec=scratch-text-editor %U
+    X-GNOME-Gettext-Domain=scratch-text-editor
+    
+        Exec=env GTK_IM_MODULE=xim scratch-text-editor %U
+        X-GNOME-Gettext-Domain=env GTK_IM_MODULE=xim scratch-text-editor
+
+    卸载原来的输入法，安装fcitx：
+        sudo apt-get remove ibus
+        sudo add-apt-repository ppa:fcitx-team/nightly
+        sudo apt-get update
+        sudo apt-get install –no-install-recommends fcitx fcitx-config-gtk
+        安装后记得配置默认输入法以及剪切板的功能。
+        
+    #设置默认开启小键盘：e
+       # sudo scratch-text-editor /etc/lightdm/lightdm.conf
+      # greeter-setup-script=/usr/bin/numlockx on
+        
+    #gif图片录制工具silentcast
+    sudo add-apt-repository ppa:sethj/silentcast
+    sudo apt-get update
+    sudo apt-get install silentcast
+
+    #安装Dconf：
+      #  sudo apt-get install dconf-tools
+        
+    #卸载gnome-keyring组件：
+       # sudo apt-get autoremove gnome-keyring
+        
+    安装elementaryplus：
+        sudo add-apt-repository ppa:cybre/elementaryplus
+        sudo apt-get update
+        sudo apt-get upgrade && sudo apt-get install elementaryplus
+        
+    安装系统更新:
+        sudo apt-get update
+        sudo apt-get upgrade
+        sudo apt-get dist upgrade
+
+   安装流量监控
+        sudo add-apt-repository ppa:nilarimogard/webupd8
+        sudo apt-get install update  
+        sudo apt-get install indicator-netspeed
+   安装菜单编辑器
+        sudo add-apt-repository ppa:menulibre-dev/devel
+         sudo apt-get update
+        sudo apt-get install menulibre
+    安装额外的驱动：
+        在软件与更新中直接选择安装额外驱动即可。
+        
+    安装Gedit：
+        sudo apt-get install gedit
+       
+       安装apache-tomcat
+       topath user/
+     
+    安装搜索指示器:
+        sudo apt-add-repository ppa:elementary-os/unstable-upstream
+        sudo apt-get install indicator-synapse
+    安装catfish：
+        sudo apt-get install catfish
+    在桌面添加图标：
+        sudo apt-get install –no-install-recommends nautilus
+        cerbere nautilus -n
+        tweaks
+    安装硬件监视器：
+        sudo apt-get install psensor
+    安装Gnome系统监视器：
+        sudo apt-get install gnome-system-monitor
+    安装Shadowsocks-qt5：
+        sudo add-apt-repository ppa:hzwhuang/ss-qt5
+        sudo apt-get update
+        sudo apt-get install shadowsocks-qt5
+    安装BleachBit：
+        sudo add-apt-repository ppa:n-muench/programs-ppa
+        sudo apt-get update
+        sudo apt-get install bleachbit
+    安装Gdeb：
+        sudo apt-get install gdebi
+    安装Firefox：
+        sudo apt-get install firefox
+    安装Chrome：
+        官网安装。`-stable`
+    安装VLC：
+        sudo apt-get install vlc
+    安装Brackets：
+        官网安装。
+    安装闹钟：
+        sudo apt-get install hourglass 
+    移除无用的包：
+        sudo apt-get install gtkorphan
+    安装Arc主题：
+        sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_15.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"
+        sudo apt-get update
+        sudo apt-get install arc-theme
+    安装Gimp：
+        sudo add-apt-repository ppa:otto-kesselgulasch/gimp
+        sudo apt-get install gimp
+    安装Krita：
+        sudo add-apt-repository ppa:kubuntu-ppa/backports
+        sudo apt-get install krita
+        sudo apt-get install kdelibs-bin
+        kbuildsycoca4 --noincremental
+    最后：
+        sudo apt-get autoremove
+        sudo apt-get clean
+
+    Arronax && alacarte 让你轻松创建桌面启动文件
+    slingscold全屏开始菜单
+    U盘刻录命令：
+    sudo dd if=/media/alic/Personer/ISO/elementaryos-stable-0.3.2-i386.iso of=/dev/sdd bs=2M (数值越大 速度越大)
+
+    快速启动http服务器：
+    python -m SimpleHTTPServer
+
+    Chrome启动不用输入密码的命令
+    python -c "import gnomekeyring;gnomekeyring.change_password_sync('login', 'YOUR_PASSWORD', '');"
+
+    环境安装
+    Go语言环境：
+    gvm是第三方开发的Go多版本管理工具，类似ruby里面的rvm工具。使用起来相当的方便，安装gvm使用如下命令：
+    bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+    安装完成后我们就可以安装go了：
+    gvm install go1.4.2
+    gvm use go1.4.2
+    也可以使用下面的命令，省去每次调用gvm use的麻烦： gvm use go1.4.2 --default
+    执行完上面的命令之后GOPATH、GOROOT等环境变量会自动设置好，这样就可以直接使用了。 
+
+
+
+
+
