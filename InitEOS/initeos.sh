@@ -396,7 +396,7 @@ echo "已经执行完毕完啦"
 #greeter-setup-script=/usr/bin/numlockx on
       
   
-#gif图片录制工具silentcast
+#gif图片录制工具silentcast 不推荐 大的git刻录会卡顿
 #sudo add-apt-repository ppa:sethj/silentcast
 #sudo apt-get update
 #sudo apt-get install silentcast
