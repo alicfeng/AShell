@@ -20,5 +20,7 @@ Use
 Use     
 `sudo chmod 777 ./initeos.sh && sudo ./initeos.sh`
 
+# 持续更新~~~
+
 
 
