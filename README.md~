@@ -1,10 +1,6 @@
 # Alic_env
 开发者常用脚本sh
 
-# 开发者常用工具集成shell安装
-Use
-`sudo chmod 777 ./run.sh && sudo ./run.sh`
-
 # shell更新host
 Use     
 extraConfig为你额外需要在/etc/hosts里面添加的DNS解析的配置       
