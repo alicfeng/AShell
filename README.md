@@ -4,7 +4,7 @@
 # 开发者常用工具集成shell安装
 Use
 `sudo chmod 777 ./run.sh && sudo ./run.sh`
-
+![image](https://github.com/alicance/Alic_env/raw/master/images/dever.png)
 # shell更新host
 Use     
 extraConfig为你额外需要在/etc/hosts里面添加的DNS解析的配置       
