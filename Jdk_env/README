@@ -1,0 +1,5 @@
+注意
+将下载下来的jdk压缩包放在此目录下
+然后cd到此目录下执行
+sudo chmod 777 ./run.sh && sudo ./run.sh
+即可
