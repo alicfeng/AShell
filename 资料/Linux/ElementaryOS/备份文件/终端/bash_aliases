@@ -1,0 +1,14 @@
+# 安装
+alias aptin='sudo apt-get install'
+
+# 卸载
+alias aptre='sudo apt-get autoremove'
+
+# 更新
+alias ud='sudo apt-get update'
+
+# 蝴蝶
+alias eth0='/home/alic/Shell/Extra/butterfly/butterfly.sh'
+
+# 更新host
+alias uphost='sudo /home/alic/Shell/Extra/hosts/hosts.sh'
