@@ -20,6 +20,13 @@ Use
 Use     
 `sudo chmod 777 ./initeos.sh && sudo ./initeos.sh`
 
+# Python常用依赖包
+Use     
+`sudo chmod 777 ./run.sh && sudo ./run.sh`
+
+# 编程相关资料
+ElementaryOS相关资料
+
 # 持续更新~~~
 
 

@@ -27,21 +27,6 @@ if [ ${UID} == 0 ]; then
     fi
 
 
-    #启动mysql服务
-    service mysql start
-    if [ $? -eq 0 ];then
-        start_mysql_result="启动mysql服务成功"
-        echo "===================================================="
-        echo "启动mysql服务成功"
-        echo "===================================================="
-    else
-        start_mysql_result="启动mysql服务失败"
-        echo "===================================================="
-        echo "启动mysql服务失败"
-        echo "===================================================="
-    fi
-
-
     #安装apache2
     apt-get install apache2 -y
     if [ $? -eq 0 ];then
@@ -148,7 +133,6 @@ if [ ${UID} == 0 ]; then
     #集中输出安装结果
     echo $java_result
     echo $php_result
-    echo $start_mysql_result
     echo $apache_result
     echo $apache_mysql_result
     echo $php_result
