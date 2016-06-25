@@ -1,16 +1,11 @@
 ﻿
 ElementaryOS安装后的配置记录
 首先卸载预装
-邮件应用
-geary
-相机
-snap-photobooth
-浏览器
-sudo apt-get purge midori*
-日历
-maya-calendar
-
-◾应用名称可以到applicattions文件夹下查看
+邮件应用 geary
+相机 snap-photobooth
+浏览器 midori
+日历 maya-calendar
+应用名称可以到applicattions文件夹下查看
 
 ◾purge-all
 sudo apt-get purge  midori* maya-calendar geary simple-scan snap-photobooth
@@ -19,10 +14,14 @@ sudo apt-get purge  midori* maya-calendar geary simple-scan snap-photobooth
 sudo apt-get install audacious    --music音乐
 sudo apt-get install smplayer     --video视频
 sudo apt-get install x11vnc       --vnc远程协议 
+
+
 ◾先安装fire再安装chrome；防止提示系统无法读取。。。。。什么鬼信息
 sudo apt-get install firefox                --火狐浏览器
 sudo apt-get install google-chrome-stable   --google浏览器
 记得给phpstorm文件夹全部权限
+
+
 ◾安装Tweaks：设置组件
 sudo apt-add-repository ppa:mpstark/elementary-tweaks-daily
 sudo apt-get update
@@ -32,11 +31,15 @@ sudo add-apt-repository -r ppa:elementary-os/daily
 Loki:
 sudo add-apt-repository ppa:philip.scott/elementary-tweaks && sudo apt-get update
 sudo apt-get install elementary-tweaks
+
+
 ◾安装Gparted：分区软件
 sudo apt-get install gparted
 
+
 ◾安装SqliteMan：SQLiite3可视化工具
 sudo apt-get install sqliteman
+
 
 ◾安装前端开发工具:Bracket
 sudo add-apt-repository ppa:webupd8team/brackets
@@ -50,7 +53,7 @@ sudo apt-get install monodevelop
 sudo apt-get install g++
 sudo apt-get install xterm (linux下的win终端模拟器->控制台)
 
-安装Gcolor2：
+◾安装Gcolor2：
 sudo apt-get install gcolor2
 
 ◾针对笔记本，安装 TLP 以延长电池寿命，减少发热
@@ -58,6 +61,7 @@ sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
 sudo apt-get install tlp tlp-rdw
 sudo tlp start
+
 
 ◾安装 Steam 游戏客户端
 sudo apt-get install steam
