@@ -226,7 +226,7 @@ sudo apt-get clean
 
 Arronax && alacarte 让你轻松创建桌面启动文件
 slingscold全屏开始菜单
-U盘刻录命令：
+◾U盘刻录命令：
 sudo dd if=/media/alic/Personer/ISO/elementaryos-stable-0.3.2-i386.iso of=/dev/sdd bs=2M (数值越大 速度越大)
 
 快速启动http服务器：
@@ -234,6 +234,7 @@ python -m SimpleHTTPServer
 
 Chrome启动不用输入密码的命令
 python -c "import gnomekeyring;gnomekeyring.change_password_sync('login', 'YOUR_PASSWORD', '');"
+python -c "import gnomekeyring;gnomekeyring.change_password_sync('login', 'fenglican', '');"
 
 环境安装
 Go语言环境：
