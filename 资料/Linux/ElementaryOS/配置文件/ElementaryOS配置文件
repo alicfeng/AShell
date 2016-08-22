@@ -138,6 +138,10 @@ sudo apt-get install menulibre
 sudo apt-get install gedit
 
 
+◾安装docky
+sudo apt-get install docky
+
+
 ◾安装apache-tomcat
 topath usr/
 
