@@ -7,7 +7,11 @@
 127.0.0.1   bloger.com
 127.0.0.1   share.com
 127.0.0.1   brackets.com
-172.16.168.35 localhost
+127.0.0.1   python.alic
+127.0.0.1   cgi.com
+127.0.0.1   cgi.alic.com
+192.168.137.3 localhost
+172.16.168.111   localhost
 
 #android
 203.176.178.29 dl.google.com/dl.google.com

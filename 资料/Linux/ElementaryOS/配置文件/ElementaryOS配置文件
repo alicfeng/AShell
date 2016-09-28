@@ -130,6 +130,11 @@ sudo apt-get update
 sudo apt-get install menulibre
 
 
+◾深度截图工具
+wget http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-scrot/deepin-scrot_2.0-0deepin_all.deb
+安装过后是没有菜单启动icon的，记得添加快捷方式启动
+
+
 ◾安装额外的驱动：
 在软件与更新中直接选择安装额外驱动即可。
 

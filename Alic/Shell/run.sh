@@ -88,22 +88,22 @@ chmod -R 777 $savepath/*
 ;;
 #更新hosts
 5)
-cd Extra/hosts && chmod 777 hosts.sh extraConfig && ./hosts.sh
+cd /home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/hosts && chmod a+x hosts.sh extraConfig && ./hosts.sh
 cd ../../
 ;;
 #备份数据库
 6)
-cd Extra/mysql && chmod 777 mysqldump.sh && ./mysqldump.sh
+cd /home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/mysql && chmod 777 mysqldump.sh && ./mysqldump.sh
 cd ../../
 ;;
 #连接蝴蝶
 7)
 echo 蝴蝶已经尝试连接～～
-chmod 777 ./Extra/butterfly/* && ./Extra/butterfly/butterfly.sh
+chmod a+x /home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/butterfly/* && /home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/butterfly/butterfly.sh
 ;;
 #连接服务器
 8)
-sudo chmod 777 ./Extra/server/.119.29.88.222 && ssh -i ./Extra/server/.119.29.88.222 ubuntu@samego.com
+sudo chmod 700 /home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/server/.119.29.88.222 && ssh -i /home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/server/.119.29.88.222 ubuntu@samego.com
 ;;
 #复制工作空间WorkSpace【源代码】
 90)
@@ -115,14 +115,15 @@ echo " 嘿，老大。这砖太大了But已经搬完啦～～ "
 ;;
 #搭建Apache+MySQL+Php
 101)
-chmod 777 ./Extra/lamp/onekey.sh && ./Extra/lamp/onekey.sh
+chmod 777 /home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/lamp/onekey.sh && /home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/lamp/onekey.sh
 ;;
 #针对ElementoryOS系统的装机初始化
 102)
-chmod 777 ./Extra/initeos/initeos.sh && ./Extra/initeos/initeos.sh
+chmod 777 /home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/initeos/initeos.sh && /home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/initeos/initeos.sh
 ;;
 560)
 read -p " Alic,你想看哪里的天气预报呢 : " localtion
+echo "curl wttr.in/$localtion"
 curl wttr.in/$localtion
 ;;
 esac
