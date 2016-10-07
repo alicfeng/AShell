@@ -12,9 +12,9 @@ if [ ${UID} == 0 ]; then
     	sed -i "s/localhost/localhost $(hostname)/g" fetchedhosts
     	sed -i "s/broadcasthost/broadcasthost $(hostname)/g" fetchedhosts
         #注意路径。已经修改单独执行的路径
-        if [ -f /home/alic/Shell/Extra/hosts/extraConfig ];
+        if [ -x extraConfig ];
         then
-        cat /home/alic/Shell/Extra/hosts/extraConfig >> fetchedhosts;
+        cat extraConfig >> fetchedhosts;
         fi
         #
         mv fetchedhosts /etc/hosts
@@ -26,9 +26,9 @@ if [ ${UID} == 0 ]; then
     	sed -i "s/localhost/localhost $(hostname)/g" fetchedhosts
     	sed -i "s/broadcasthost/broadcasthost $(hostname)/g" fetchedhosts
         #
-        if [ -f /home/alic/Shell/Extra/hosts/extraConfig ];
+        if [ -x extraConfig ];
         then
-        cat /home/alic/Shell/Extra/hosts/extraConfig >> fetchedhosts;
+        cat extraConfig >> fetchedhosts;
         fi
         #
         mv fetchedhosts /etc/hosts
@@ -40,9 +40,9 @@ if [ ${UID} == 0 ]; then
     	sed -i "s/localhost/localhost $(hostname)/g" fetchedhosts
     	sed -i "s/broadcasthost/broadcasthost $(hostname)/g" fetchedhosts
         #
-        if [ -f /home/alic/Shell/Extra/hosts/extraConfig ];
+        if [ -x extraConfig ];
         then
-        cat /home/alic/Shell/Extra/hosts/extraConfig >> fetchedhosts;
+        cat extraConfig >> fetchedhosts;
         fi
         #
         mv fetchedhosts /etc/hosts

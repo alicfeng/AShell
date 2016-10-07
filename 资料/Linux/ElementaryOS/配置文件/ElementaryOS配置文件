@@ -45,6 +45,7 @@ sudo apt-get install sqliteman
 sudo add-apt-repository ppa:webupd8team/brackets
 sudo apt-get update
 sudo apt-get install brackets
+sudo add-apt-repository -r ppa:webupd8team/brackets
 
 ◾安装Vim：
 sudo apt-get install vim
@@ -319,6 +320,9 @@ sudo apt-get install elementary-yo
 sudo add-apt-repository ppa:numix/ppa
 sudo apt-get update
 sudo apt-get install numix-icon-theme-circle
+
+◾ 网易云音乐最小化托盘问题 
+然后把原来的Exec那行改为：Exec=env XDG_CURRENT_DESKTOP=Unity netease-cloud-music %U
 
 
 
