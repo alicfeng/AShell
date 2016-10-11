@@ -12,9 +12,13 @@ startbutterfly="连接蝴蝶"
 copyworkspace="备份WorkSpace"
 installenvironment="安装LAMP环境"
 initcomputer="装机初始化EOS"
+getConfig="备份配置文件"
 weather="查看天气"
 linkserver="连接服务器"
 exittip="快滚一边去"
+
+Alic_env_path="/home/alic/tutorial/Github/Alic_env"
+
 #将任务输入屏幕tips
 echo " 1 : $startapache"
 echo " 2 : $stopapache"
@@ -27,6 +31,7 @@ echo " 8 : $linkserver"
 echo " 90 : $copyworkspace"
 echo " 101 : $installenvironment"
 echo " 102 : $initcomputer"
+echo " 103 : $getConfig"
 echo " 560 : $weather"
 echo " 0 : $exittip"
 while true
@@ -88,12 +93,11 @@ chmod -R 777 $savepath/*
 ;;
 #更新hosts
 5)
-cd Extra/hosts && chmod 777 hosts.sh extraConfig && ./hosts.sh
-cd ../../
+chmod a+x $Alic_env_path/Alic/Shell/Extra/hosts/hosts.sh && $Alic_env_path/Alic/Shell/Extra/hosts/hosts.sh
 ;;
 #备份数据库
 6)
-cd Extra/mysql && chmod 777 mysqldump.sh && ./mysqldump.sh
+chmod a+x $Alic_env_path/Alic/Shell/Extra/mysql/mysqldump.sh && $Alic_env_path/Alic/Shell/Extra/mysql/mysqldump.sh
 cd ../../
 ;;
 #连接蝴蝶
@@ -103,23 +107,28 @@ chmod 777 ./Extra/butterfly/* && ./Extra/butterfly/butterfly.sh
 ;;
 #连接服务器
 8)
-sudo chmod 777 ./Extra/server/.119.29.88.222 && ssh -i ./Extra/server/.119.29.88.222 ubuntu@samego.com
+ssh -i $Alic_env_path/Alic/Shell/Extra/server/.119.29.88.222 ubuntu@samego.com
 ;;
 #复制工作空间WorkSpace【源代码】
 90)
 sourceDir=/home/alic/WorkSpace
-toDir=/media/alic/NETAC/Coding/WorkSpace"-"$(date +%Y-%m-%d)
+toDir=/media/alic/asus/Coding/WorkSpace"-"$(date +%Y-%m-%d)
 cp -R $sourceDir $toDir
 chmod 777 $toDir && chmod -R 777 $toDir/*
 echo " 嘿，老大。这砖太大了But已经搬完啦～～ "
 ;;
 #搭建Apache+MySQL+Php
 101)
-chmod 777 ./Extra/lamp/onekey.sh && ./Extra/lamp/onekey.sh
+chmod a+x $Alic_env_path/Alic/Shell/Extra/lamp/onekey.sh && $Alic_env_path/Alic/Shell/Extra/lamp/onekey.sh
 ;;
 #针对ElementoryOS系统的装机初始化
 102)
-chmod 777 ./Extra/initeos/initeos.sh && ./Extra/initeos/initeos.sh
+chmod a+x $Alic_env_path/Alic/Shell/Extra/initeos/initeos.sh && $Alic_env_path/Alic/Shell/Extra/initeos/initeos.sh
+;;
+#备份配置文件
+103)
+chmod a+x $Alic_env_path/资料/Linux/ElementaryOS/配置文件/getConfig.sh 
+$Alic_env_path/资料/Linux/ElementaryOS/配置文件/getConfig.sh
 ;;
 560)
 read -p " Alic,你想看哪里的天气预报呢 : " localtion

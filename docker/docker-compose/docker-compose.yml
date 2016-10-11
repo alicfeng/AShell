@@ -1,0 +1,46 @@
+version: '2'
+services:
+  sise: #sise.samego.com
+    container_name: sise
+    image: abiosoft/caddy:php
+    volumes:
+      - "/home/alic/www/caddy/:/srv/" #srv
+      - "/media/alic/asus/Linux/software/:/srv/source/Linux/software" #linux-software
+      - "/media/alic/asus/Mac/software/:/srv/source/Mac/software" #mac-software
+      - "/media/alic/asus/Linux/iso/:/srv/source/Linux/iso" #os-ios
+      - "/media/alic/asus/Linux/games/:/srv/source/Linux/games" #games
+      - "/media/alic/asus/Video/:/srv/source/Video" #videos
+      - "/media/alic/asus/Windows/:/srv/source/Windows" #winsows-all
+      - "/home/alic/文档/作业区域/:/srv/source/Others/作业区域" #作业
+    ports:
+      - "2015:2015"
+    restart: always
+
+
+  nginx: #nginx
+    container_name: nginx
+    image: reg.zuolan.me/library/nginx:alpine
+    volumes:
+      - "/home/alic/www/nginx/:/nginx/"
+      - "/home/alic/tutorial/Github/Alic_env/docker/nginx/etc/nginx/sites-enabled/sise.conf:/etc/nginx/conf.d/sise.conf:ro"
+      - "/home/alic/www/file/:/file/"
+      - "/home/alic/tutorial/Github/Alic_env/docker/nginx/etc/nginx/sites-enabled/file.conf:/etc/nginx/conf.d/file.conf:ro"
+      - "/home/alic/tutorial/Github/Alic_env/docker/nginx/etc/nginx/sites-enabled/file.proxy.conf:/etc/nginx/conf.d/file.proxy.conf:ro"
+    ports:
+      - "80:80"
+      - "8015:8015"
+    restart: always
+
+
+
+
+
+
+
+
+
+
+
+
+
+
