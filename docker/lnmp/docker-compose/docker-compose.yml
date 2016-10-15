@@ -1,36 +1,16 @@
 version: '2'
 services:
-  sise: #sise.samego.com
-    container_name: sise
-    image: abiosoft/caddy:php
-    volumes:
-      - /home/alic/www/caddy/:/srv/ #srv
-      - /media/alic/asus/Linux/software/:/srv/source/Linux/software #linux-software
-      - /media/alic/asus/Mac/software/:/srv/source/Mac/software #mac-software
-      - /media/alic/asus/Linux/iso/:/srv/source/Linux/iso #os-ios
-      - /media/alic/asus/Linux/games/:/srv/source/Linux/games #games
-      - /media/alic/asus/Video/:/srv/source/Video #videos
-      - /media/alic/asus/Windows/:/srv/source/Windows #winsows-all
-      - /home/alic/文档/作业区域/:/srv/source/Others/作业区域 #作业
-    ports:
-      - 2015:2015
-    restart: always
-
-
-  # web server[lnmp]
+  # web server
   nginx:
     container_name: nginx
     image: reg.zuolan.me/library/nginx:alpine
     ports:
       - 80:80
-      - 8015:8015
-      - 8090:8090
       #- 443:443
     volumes:
       # www
       - /home/alic/www/default/:/usr/share/nginx/html/
       - /home/alic/www/:/www/
-      - /home/alic/WorkSpace/PHP/PHP/backstage/:/www/backstage/
       # config
       - /home/alic/tutorial/Github/Alic_env/docker/lnmp/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - /home/alic/tutorial/Github/Alic_env/docker/lnmp/nginx/conf.d/:/etc/nginx/conf.d/:ro
@@ -49,9 +29,8 @@ services:
     volumes:
       - /home/alic/www/default/:/usr/share/nginx/html/
       - /home/alic/www/:/www/
-      - /home/alic/WorkSpace/PHP/PHP/backstage/:/www/backstage/
       # Your php.ini
-      # - /home/alic/tutorial/Github/Alic_env/docker/lnmp/php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
+      - /home/alic/tutorial/Github/Alic_env/docker/lnmp/php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
     # environment:
       # Set your APP env variables here:
       # - APP_KEY=
@@ -70,20 +49,12 @@ services:
       - 3306:3306
     volumes:
       - /media/alic/asus/data/docker/mysql:/var/lib/mysql
+      - /home/alic/tutorial/Github/Alic_env/docker/lnmp/mysql/my.cnf:/etc/mysql/my.cnf
     environment:
       MYSQL_ROOT_PASSWORD: fenglican
       MYSQL_USER: alic
       MYSQL_PASSWORD: fenglican
       MYSQL_DATABASE: docker
-
-
-
-
-
-
-
-
-
 
 
 
