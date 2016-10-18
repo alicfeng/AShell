@@ -103,6 +103,16 @@ services:
       MIDDLE_PORT: 8001
     restart: always
 
+  # proxy
+  wangyi:
+    container_name: wangyi
+    image: ptunnel:local
+    ports:
+      - 8002:8002
+    environment:
+      IP: 59.111.116.168
+      MIDDLE_PORT: 8002
+    restart: always
 
 
 

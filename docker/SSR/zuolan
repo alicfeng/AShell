@@ -1,0 +1,54 @@
+#! /bin/bash
+
+help(){
+cat << EOF
+用法：$0 [选项]
+
+一个管理本地代理的脚本。
+
+选项：
+  参数   -  说明
+---------------------------------------------------------
+  -m     -  查看当前连接情况。
+  -n     -  使用 -n <eth0> 指定网卡可以分享本地代理。
+  -k     -  重启 sshd 进程。（当 ssh 无法连接时使用。）
+  -h     -  显示帮助信息。
+EOF
+}
+
+# ps xu | grep ssh | grep -v grep | awk '{ print $2 }' | xargs kill -9
+while getopts ":mn:hk" optname
+  do
+    case "$optname" in
+      "m")
+        netstat -tulpen | grep ssh | grep '0.0.0.0'
+        exit 0
+        ;;
+      "n")
+        NET=$OPTARG
+        if [ "$NET" = "" ]; then
+            echo "没有指定网卡，代理将只能在本地连接。"
+        else
+            IP=$(ip -o -4 addr list $NET | awk '{print $4}' | cut -d/ -f1)
+        fi
+        ;;
+      "k")
+        killall ssh
+        echo "全部代理已经关闭"
+        sudo killall sshd
+        echo "sshd 守护进程已经全部关闭"
+        ;;
+      "h")
+        help; exit 0;
+        ;;
+      "?") echo "错误参数"; exit 1 ;;
+      *) echo "未知错误"; exit 1 ;;
+    esac
+  done
+killall ssh
+echo "全部代理已经关闭"
+nohup ssh -p 8001 -ND $IP:10001 root@localhost >/dev/null 2>&1 &
+nohup ssh -p 8002 -ND $IP:10002 root@localhost >/dev/null 2>&1 &
+nohup ssh -p 8003 -ND $IP:10003 root@localhost >/dev/null 2>&1 &
+nohup ssh -p 8004 -ND $IP:10004 root@localhost >/dev/null 2>&1 &
+echo "代理建立成功，广州10001、杭州10002、青岛10003、东京10004"

@@ -1,0 +1,6 @@
+#!/bin/bash
+#server-shell
+apt-get update && apt-get install ssh ptunnel 
+
+#root run
+nohub ptunnel &
