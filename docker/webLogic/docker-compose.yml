@@ -1,0 +1,11 @@
+#/bin/bash
+version: '2'
+services:
+  weblogic: #sise.samego.com
+    container_name: weblogic
+    image: reg.zuolan.me/iwanttobefreak/weblogic1036:latest
+    volumes:
+      - /media/alic/data/docker/weblogic:/opt/data
+    ports:
+      - 7001:7001
+    restart: always
