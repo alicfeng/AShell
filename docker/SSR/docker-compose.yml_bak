@@ -1,0 +1,27 @@
+version: '2'
+services:
+  # proxy-网易
+  ptunnel:
+    container_name: ptunnel
+    image: reg.zuolan.me/zuolan/ptunnel:local-root
+    ports:
+      - 8001:8001
+    environment:
+      IP: 59.111.97.10
+      MIDDLE_PORT: 8001
+    restart: always
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

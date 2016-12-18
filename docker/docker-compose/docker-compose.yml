@@ -21,7 +21,8 @@ services:
     container_name: gogs
     image: reg.zuolan.me/gogs/gogs:latest
     volumes:
-      - /media/alic/asus/data/docker/gogs-data/:/data/
+      #- /media/alic/asus/data/docker/gogs-data/:/data/
+      - /home/alic/www/gogs/:/data/
     ports:
       - 3000:3000
     restart: always
@@ -34,13 +35,16 @@ services:
     ports:
       - 80:80
       - 8015:8015
+      - 8019:8019
       - 8090:8090
+      - 8034:8034
       #- 443:443
     volumes:
       # www
       - /home/alic/www/default/:/usr/share/nginx/html/
       - /home/alic/www/:/www/
       - /home/alic/WorkSpace/PHP/PHP/backstage/:/www/backstage/
+      - /home/alic/WorkSpace/PHP/HTML/Class/html/:/www/html/
       # config
       - /home/alic/tutorial/Github/Alic_env/docker/lnmp/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - /home/alic/tutorial/Github/Alic_env/docker/lnmp/nginx/conf.d/:/etc/nginx/conf.d/:ro
@@ -62,6 +66,7 @@ services:
       - /home/alic/www/default/:/usr/share/nginx/html/
       - /home/alic/www/:/www/
       - /home/alic/WorkSpace/PHP/PHP/backstage/:/www/backstage/
+      - /home/alic/WorkSpace/PHP/HTML/Class/html/:/www/html/
       # Your php.ini
       # - /home/alic/tutorial/Github/Alic_env/docker/lnmp/php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
     # environment:
@@ -91,17 +96,6 @@ services:
       MYSQL_DATABASE: docker
     restart: always
 
-
-  # proxy
-  ptunnel:
-    container_name: ptunnel
-    image: reg.zuolan.me/zuolan/ptunnel:local-root
-    ports:
-      - 8001:8001
-    environment:
-      IP: 59.111.97.10
-      MIDDLE_PORT: 8001
-    restart: always
 
 
 

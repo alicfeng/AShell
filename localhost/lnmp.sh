@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ ${UID} == 0 ]; then
+if [ ${UID} -eq 0 ]; then
   case $1 in
       start)
           /etc/init.d/nginx start #nginx
@@ -16,7 +16,7 @@ if [ ${UID} == 0 ]; then
           /etc/init.d/mysql restart #mysql
           /etc/init.d/php7.0-fpm restart #php
           ;;
-          *)
+      *)
           echo "Usage: $0 (start|stop|restart)"
           ;;
   esac

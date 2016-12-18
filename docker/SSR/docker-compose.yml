@@ -1,0 +1,37 @@
+version: '2'
+services:
+  # proxy-网易 59.111.97.10
+  ptunnel:
+    container_name: ptunnel
+    image: reg.zuolan.me/zuolan/ptunnel:local-root
+    ports:
+      - 8001:8001
+    environment:
+      IP: 59.111.97.10
+      MIDDLE_PORT: 8001
+    restart: always
+  # wen-he
+  ptunnel_wen:
+    container_name: ptunnel_wen
+    image: reg.zuolan.me/zuolan/ptunnel:local-root
+    ports:
+      - 8002:8001
+    environment:
+      IP: 45.32.24.128
+      MIDDLE_PORT: 8001
+    restart: always
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

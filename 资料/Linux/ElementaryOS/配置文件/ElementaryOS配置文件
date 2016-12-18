@@ -326,6 +326,11 @@ sudo apt-get install numix-icon-theme-circle
 ◾ 网易云音乐最小化托盘问题 
 然后把原来的Exec那行改为：Exec=env XDG_CURRENT_DESKTOP=Unity netease-cloud-music %U
 
+◾ 安装Albert Spotlight (替代 Mac Spotlight)
+sudo add-apt-repository ppa:noobslab/macbuntu
+sudo apt-get update
+sudo apt-get install albert
+
 
 
 

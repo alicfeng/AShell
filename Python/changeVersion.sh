@@ -6,10 +6,17 @@ pythonDir="/usr/bin/pythonAlic/"
 #--------config----------end
 
 
-index=0
+index=
 pythonarray[0]="null"
 
+# 当前的python版本
+function currentVersion(){
+	echo "当前的版本为${version}"
+	python --version
+	echo "------------------------------"
+}
 if [ ${UID} == 0 ];then
+	currentVersion
 	echo "请选择您要切换python的版本:"
 	echo "1. 初始化程序与备份"
 	#判断配置目录是否存在
