@@ -37,6 +37,7 @@ services:
       - 8015:8015
       - 8019:8019
       - 8090:8090
+      - 8888:8888
       - 8034:8034
       #- 443:443
     volumes:
@@ -44,6 +45,7 @@ services:
       - /home/alic/www/default/:/usr/share/nginx/html/
       - /home/alic/www/:/www/
       - /home/alic/WorkSpace/PHP/PHP/backstage/:/www/backstage/
+      - /home/alic/WorkSpace/Project/backStage/:/www/backStage/
       - /home/alic/WorkSpace/PHP/HTML/Class/html/:/www/html/
       # config
       - /home/alic/tutorial/Github/Alic_env/docker/lnmp/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
@@ -66,6 +68,7 @@ services:
       - /home/alic/www/default/:/usr/share/nginx/html/
       - /home/alic/www/:/www/
       - /home/alic/WorkSpace/PHP/PHP/backstage/:/www/backstage/
+      - /home/alic/WorkSpace/Project/backStage/:/www/backStage/
       - /home/alic/WorkSpace/PHP/HTML/Class/html/:/www/html/
       # Your php.ini
       # - /home/alic/tutorial/Github/Alic_env/docker/lnmp/php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
