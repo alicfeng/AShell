@@ -11,7 +11,7 @@ if [ ${UID} == 0 ]; then
         wget https://raw.githubusercontent.com/racaljk/hosts/master/hosts -O $path/fetchedhosts
         mv /etc/hosts /etc/hosts-$(date +%F-%H%M%S).bak
     	  sed -i "s/localhost/localhost $(hostname)/g" $path/fetchedhosts
-    	  sed -i "s/broadcasthost/broadcasthost $(hostname)/g" $path/ fetchedhosts
+    	  sed -i "s/broadcasthost/broadcasthost $(hostname)/g" $path/fetchedhosts
         #注意路径。已经修改单独执行的路径
         if [ -x $path/extraConfig ];
         then

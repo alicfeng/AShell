@@ -7,17 +7,7 @@ services:
     ports:
       - 8001:8001
     environment:
-      IP: 59.111.97.10
-      MIDDLE_PORT: 8001
-    restart: always
-  # wen-he
-  ptunnel_wen:
-    container_name: ptunnel_wen
-    image: reg.zuolan.me/zuolan/ptunnel:local-root
-    ports:
-      - 8002:8001
-    environment:
-      IP: 45.32.24.128
+      IP: 59.111.98.47
       MIDDLE_PORT: 8001
     restart: always
 

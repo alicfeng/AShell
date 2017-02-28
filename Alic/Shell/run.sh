@@ -94,6 +94,7 @@ chmod -R 777 $savepath/*
 #更新hosts
 5)
 chmod a+x $Alic_env_path/Alic/Shell/Extra/hosts/hosts.sh && $Alic_env_path/Alic/Shell/Extra/hosts/hosts.sh
+notify-send "更新host" "更新完成~"
 ;;
 #备份数据库
 6)

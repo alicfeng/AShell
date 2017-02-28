@@ -3,7 +3,7 @@
 255.255.255.255	broadcasthost alic-X550VC
 ::1	localhost alic-X550VC
 fe80::1%lo0	localhost alic-X550VC
-172.16.168.128   localhost
+172.16.168.1   localhost
 #android
 203.176.178.29 dl.google.com/dl.google.com
 

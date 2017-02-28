@@ -210,6 +210,14 @@ sudo apt-get install vlc
 sudo apt-get install hourglass 
 
 
+◾Transmission 是一个 BitTorrent 客户端软件，它支持速度限制、制作种子、远程控制、磁力链接、数据加密、损坏修复、数据来源交换等功能。
+sudo apt-get install transmission
+
+
+◾邮件客户端
+sudo apt-get install thunderbird
+
+
 ◾移除无用的包：
 sudo apt-get install gtkorphan
 
