@@ -4,9 +4,8 @@ main(){
   echo -e "\n"$(date "+%Y-%m-%d %H:%M:%S") >> build.log
   echo "terminal is executing program command,Please waiting..."
 
-  #update - source.list
-  #sudo apt-get update -y >> build.log
-  notify-send "install NodeJS" "Hello $USER☺update source.list completely~"
+  #update source.list and install dependence
+  sudo apt-get update -y && sudo apt-get install -y libssl-dev g++ >> build.log
 
   #install nodejs
   sudo apt-get install nodejs -y >> build.log
