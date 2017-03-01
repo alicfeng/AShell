@@ -11,8 +11,7 @@ pythonarray[0]="null"
 
 # 当前的python版本
 function currentVersion(){
-	echo "当前的版本为${version}"
-	python --version
+	echo "当前的版本为$(python --version)"
 	echo "------------------------------"
 }
 if [ ${UID} == 0 ];then
@@ -71,6 +70,7 @@ if [ ${UID} == 0 ];then
 			rm /usr/bin/python
 			ln -s /usr/bin/$pyname /usr/bin/python
 			echo "版本已经切换至$pyname"
+			notify-send "change python version" "Hello Alic☺change python version completely~"
 			#开始切换版本操作----------end
 		fi
 	done
