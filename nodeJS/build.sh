@@ -39,7 +39,6 @@ main(){
 }
 
 about(){
-
 cat <<EOF
 ------------------------------------------------------------------------------
 $(sudo apt-get install figlet -y >/dev/null 2>&1 && figlet "Alic Feng")
