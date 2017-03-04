@@ -2,6 +2,7 @@
 export DISPLAY=:0
 #关于
 about(){
+clear
 cat <<EOF
 ------------------------------------------------------------------------------
 $(sudo apt-get install figlet -y >/dev/null>&1 && figlet " Alic Feng Shell")
@@ -308,9 +309,9 @@ $(sudo apt-get install toilet -y >/dev/null>&1 && echo " Daily tools " | toilet 
 121➜ Transmission   122➜ ThunderBird     123➜ Okular        124➜ FocusWriter
 125➜ Typora         126➜ TeamViewer
 $(echo " System tools " | toilet -f term -F border --gay)
-201➜ Deepin-Scrot  02➜ Albert         03➜ Guake        04➜ gnome-system-monitor
-205➜ psensor       06➜ catfish        07➜ docky        08➜ Indicator Netspeed
-209➜ TLP           10➜ menulibre
+201➜ Deepin-Scrot   202➜ Albert          203➜ Guake         204➜ gnome-system-monitor
+205➜ psensor        206➜ catfish         207➜ docky         208➜ Indicator Netspeed
+209➜ TLP            210➜ menulibre
 $(echo " Developer tools " | toilet -f term -F border --gay)
 301➜ Jetbrains      302➜ Brackets        303➜ Sublime Text  304➜ Atom
 305➜ sqliteman      306➜ Git、GitG       307➜ monodevelop   308➜ MySQL workbench
