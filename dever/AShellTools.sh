@@ -153,52 +153,64 @@ installMain(){
         showDoingTask "FocusWriter" && sudo apt-get install focuswriter -y && showResultTip "FocusWriter"
         ;;
 
-       01)
+        125)
+        showDoingTask "Typora" && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE \
+        && sudo add-apt-repository 'deb https://typora.io linux/' && sudo apt-get update >/dev/null>&1 \
+        && sudo apt-get install typora -y  && showResultTip "Typora"
+        ;;
+
+        126)
+        showDoingTask "TeamViewer" && \
+        wget -c -P $(pwd) https://download.teamviewer.com/download/teamviewer_i386.deb \
+        && sudo dpkg -i teamviewer_i386.deb && sudo apt-get install -fy && showResultTip "TeamViewer"
+        ;;
+
+        201)
         showDoingTask "Deepin-Scrot" && \
         wget -c -P $(pwd) http://packages.linuxdeepin.com/deepin/pool/main/d/deepin-scrot/deepin-scrot_2.0-0deepin_all.deb \
         && sudo dpkg -i deepin-scrot_2.0-0deepin_all.deb && sudo apt-get install -fy && showResultTip "Deepin-Scrot"
         ;;
 
-       02)
+        202)
         showDoingTask "Albert Spotlight" && sudo add-apt-repository ppa:hzwhuang/ss-qt5 -y && sudo apt-get update >/dev/null>&1
         sudo apt-get install albert && sudo add-apt-repository ppa:noobslab/macbuntu -ry showResultTip "Albert Spotlight"
         ;;
 
-       03)
+        203)
         showDoingTask "Guake Terminal" && sudo apt-get install guake -y && showResultTip "Guake Terminal"
         ;;
 
-       04)
+        204)
         showDoingTask "bleachbit" && sudo add-apt-repository ppa:n-muench/programs-ppa -y && sudo apt-get update >/dev/null>&1
         sudo apt-get install bleachbit && sudo add-apt-repository ppa:n-muench/programs-ppa -ry showResultTip "bleachbit"
         ;;
 
-       05)
+        205)
         showDoingTask "psensor" && sudo add-apt-repository ppa:jfi/ppa -y && sudo apt-get update >/dev/null>&1
         sudo apt-get install lm-sensors hddtemp psensor -y && sudo add-apt-repository ppa:jfi/ppa -ry \
         && showResultTip "psensor"
         ;;
 
-       06)
+        206)
         showDoingTask "catfish" && sudo apt-get install catfish -y && showResultTip "catfish"
         ;;
 
-       07)
+        207)
         showDoingTask "docky" && sudo apt-get install docky -y && showResultTip "docky"
         ;;
 
-       08)
+        208)
         showDoingTask "Indicator Netspeed" && sudo add-apt-repository ppa:nilarimogard/webupd8 -y && sudo apt-get update >/dev/null>&1
         sudo apt-get install indicator-netspeed -y && sudo add-apt-repository ppa:nilarimogard/webupd8 -ry \
         && showResultTip "Indicator Netspeed"
         ;;
 
-       09)
+        209)
         showDoingTask "TLP" && sudo add-apt-repository ppa:linrunner/tlp -y && sudo apt-get update >/dev/null>&1
         sudo apt-get install tlp tlp-rdw -y && sudo add-apt-repository ppa:linrunner/tlp -ry && showResultTip "TLP"
         ;;
 
-       10)
+        210)
         showDoingTask "menulibre" && sudo add-apt-repository ppa:menulibre-dev/devel -y && sudo apt-get update >/dev/null>&1
         sudo apt-get install menulibre -y && sudo add-apt-repository ppa:menulibre-dev/devel -ry && showResultTip "menulibre"
         ;;
@@ -294,6 +306,7 @@ $(sudo apt-get install toilet -y >/dev/null>&1 && echo " Daily tools " | toilet 
 113➜ Audience       114➜ Gimp            115➜ Krita         116➜ gedit
 117➜ x11vnc         118➜ Shadowsocks-qt5 119➜ VirtualBox    120➜ Steam
 121➜ Transmission   122➜ ThunderBird     123➜ Okular        124➜ FocusWriter
+125➜ Typora         126➜ TeamViewer
 $(echo " System tools " | toilet -f term -F border --gay)
 201➜ Deepin-Scrot  02➜ Albert         03➜ Guake        04➜ gnome-system-monitor
 205➜ psensor       06➜ catfish        07➜ docky        08➜ Indicator Netspeed
@@ -315,3 +328,4 @@ about
 installMain
 }
 main
+
