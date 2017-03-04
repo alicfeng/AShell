@@ -285,6 +285,12 @@ installMain(){
         showDoingTask "Aria2" && sudo apt-get install aria2 -y && showResultTip "Aria2"
         ;;
 
+        406)
+        showDoingTask "Proxychains4" && git clone https://github.com/rofl0r/proxychains-ng.git && \
+        cd proxychains-ng && sudo ./configure –prefix=/usr –sysconfdir=/etc && sudo make && sudo make install && \
+        sudo make install-config && cd .. && rm -rf proxychains-ng && showResultTip "Aria2"
+        ;;
+
         *)
         echo "Please choose right number..."
     esac
@@ -317,8 +323,8 @@ $(echo " Developer tools " | toilet -f term -F border --gay)
 305➜ sqliteman      306➜ Git、GitG       307➜ monodevelop   308➜ MySQL workbench
 309➜ Genymotion     310➜ Android Screen Monitor
 $(echo " Terminal tools " | toilet -f term -F border --gay)
-401➜ enca、iconv    402➜ Figlet          403➜ oh-my-zsh     404➜ Asciinema
-405➜ Aria2
+401➜ enca ,iconv    402➜ Figlet          403➜ oh-my-zsh     404➜ Asciinema
+405➜ Aria2          406➜ Proxychains4
 =========================================================================================
 EOF
 }

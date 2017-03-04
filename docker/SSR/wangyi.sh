@@ -18,7 +18,7 @@ nohup ssh -p 8001 -ND 172.16.168.1:10002 root@localhost > /dev/null 2>&1 &
 
 nohup ssh -p 8001 -ND 172.16.168.1:10003 root@localhost > /dev/null 2>&1 &
 
-nohup ssh -p 8001 -ND 172.16.168.1:10005 root@localhost > /dev/null 2>&1 &
+nohup ssh -p 8001 -ND localhost:10005 root@localhost > /dev/null 2>&1 &
 
 nohup ssh -p 8001 -ND 172.16.168.1:10004 root@localhost > /dev/null 2>&1 &
 
