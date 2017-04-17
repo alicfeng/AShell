@@ -1,0 +1,37 @@
+version: '2'
+services:
+  # cloudstack
+  cloudstack:
+    container_name: cloudstack
+    image: docker.io/cloudstack/management_centos6
+    ports:
+      - 8080:8080
+      - 8250:8250
+    links:
+      - cloudstack-mysql:mysql
+    restart: always
+
+  # cloudstack-mysql
+  cloudstack-mysql:
+    container_name: cloudstack-mysql
+    image: docker.io/mysql:5.5
+    environment:
+      MYSQL_ROOT_PASSWORD: fenglican
+    restart: always
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

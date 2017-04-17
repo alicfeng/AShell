@@ -39,14 +39,18 @@ services:
       - 8090:8090
       - 8888:8888
       - 8034:8034
+      - 6006:6006
+      - 10015:10015
       #- 443:443
     volumes:
       # www
       - /home/alic/www/default/:/usr/share/nginx/html/
       - /home/alic/www/:/www/
       - /home/alic/WorkSpace/PHP/PHP/backstage/:/www/backstage/
+      - /home/alic/WorkSpace/PHP/PHP/basicThinkPHP5/:/www/basicThinkPHP5/
       - /home/alic/WorkSpace/Project/backStage/:/www/backStage/
       - /home/alic/WorkSpace/PHP/HTML/Class/html/:/www/html/
+      - /home/alic/WorkSpace/vsCode/:/www/vscode/
       # config
       - /home/alic/tutorial/Github/Alic_env/docker/lnmp/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - /home/alic/tutorial/Github/Alic_env/docker/lnmp/nginx/conf.d/:/etc/nginx/conf.d/:ro
@@ -68,8 +72,10 @@ services:
       - /home/alic/www/default/:/usr/share/nginx/html/
       - /home/alic/www/:/www/
       - /home/alic/WorkSpace/PHP/PHP/backstage/:/www/backstage/
+      - /home/alic/WorkSpace/PHP/PHP/basicThinkPHP5/:/www/basicThinkPHP5/
       - /home/alic/WorkSpace/Project/backStage/:/www/backStage/
       - /home/alic/WorkSpace/PHP/HTML/Class/html/:/www/html/
+      - /home/alic/WorkSpace/vsCode/:/www/vscode/
       # Your php.ini
       # - /home/alic/tutorial/Github/Alic_env/docker/lnmp/php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
     # environment:
@@ -84,7 +90,7 @@ services:
     restart: always
 
 
-  # database
+  # database 注意3306已改
   mysql:
     container_name: mysql
     image: reg.zuolan.me/library/mysql:5.6
