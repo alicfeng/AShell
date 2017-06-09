@@ -80,6 +80,13 @@ sudo apt-get update
 sudo apt-get install –no-install-recommends fcitx fcitx-config-gtk
 安装后记得配置默认输入法以及剪切板的功能。
 
+google拼音
+sudo apt-get install fcitx-googlepinyin
+突然搜狗拼音就出问题不能用了
+[Gtk/IMModule....
+解决方案
+sudo vim /usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override
+注释那一行
 
 ◾设置默认开启小键盘：e
 sudo scratch-text-editor /etc/lightdm/lightdm.conf

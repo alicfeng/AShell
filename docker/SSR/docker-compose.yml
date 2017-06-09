@@ -7,7 +7,7 @@ services:
     ports:
       - 8001:8001
     environment:
-      IP: 59.111.98.47
+      IP: 59.111.96.28
       MIDDLE_PORT: 8001
     restart: always
 
