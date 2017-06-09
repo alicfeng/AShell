@@ -1,9 +1,10 @@
 # Localhost (DO NOT REMOVE)
-127.0.0.1	localhost alic-X550VC
-255.255.255.255	broadcasthost alic-X550VC
-::1	localhost alic-X550VC
-fe80::1%lo0	localhost alic-X550VC
-172.16.168.1   localhost
+127.0.0.1	localhost alic-X550VC alic-samego
+255.255.255.255	broadcasthost alic-X550VC alic-samego
+::1	localhost alic-X550VC alic-samego
+fe80::1%lo0	localhost alic-X550VC alic-samego
+
+
 #android
 203.176.178.29 dl.google.com/dl.google.com
 

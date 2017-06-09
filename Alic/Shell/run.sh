@@ -17,7 +17,7 @@ weather="查看天气"
 linkserver="连接服务器"
 exittip="快滚一边去"
 
-Alic_env_path="/home/alic/tutorial/Github/Alic_env"
+Alic_env_path="/home/alic/tutorial/github/alicance/Alic_env"
 
 #将任务输入屏幕tips
 echo " 1 : $startapache"

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-path="/home/alic/tutorial/Github/Alic_env/Alic/Shell/Extra/hosts"
+path="/home/alic/tutorial/github/alicance/Alic_env/Alic/Shell/Extra/hosts"
 if [ ${UID} == 0 ]; then
     echo "1. Racaljk"
     echo "2. Liuker"

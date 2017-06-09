@@ -11,8 +11,6 @@ ElementaryOS安装后的配置记录
 sudo apt-get purge  midori* maya-calendar geary simple-scan snap-photobooth
 
 ◾install-all
-sudo apt-get install audacious    --music音乐
-sudo apt-get install smplayer     --video视频
 sudo apt-get install x11vnc       --vnc远程协议 
 
 
@@ -57,19 +55,13 @@ sudo apt-get install xterm (linux下的win终端模拟器->控制台)
 ◾安装Gcolor2：
 sudo apt-get install gcolor2
 
-◾针对笔记本，安装 TLP 以延长电池寿命，减少发热
+◾针对笔记本，安装 TLP 以延长电池寿命，减少发热 32位就不装了，可能影响wingpanel图标
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
 sudo apt-get install tlp tlp-rdw
 sudo tlp start
 
 
-◾安装 Steam 游戏客户端
-sudo apt-get install steam
-
-
-◾安装即时通讯软件 Pidgin 和 Skype
-sudo apt-get install skype pidgin
 
 
 ◾配置Scratch的桌面文件，以便能够使用中文输入法：
@@ -100,10 +92,6 @@ sudo apt-get update
 sudo apt-get install silentcast
 
 
-◾安装Dconf：
-sudo apt-get install dconf-tools
-
-
 ◾卸载gnome-keyring组件：
 sudo apt-get autoremove gnome-keyring
 
@@ -111,12 +99,6 @@ sudo apt-get autoremove gnome-keyring
 sudo add-apt-repository ppa:cybre/elementaryplus
 sudo apt-get update
 sudo apt-get upgrade && sudo apt-get install elementaryplus
-
-
-◾安装系统更新:
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get dist upgrade
 
 
 ◾安装流量监控
@@ -150,10 +132,6 @@ sudo apt-get install gedit
 sudo apt-get install docky
 
 
-◾安装apache-tomcat
-topath usr/
-
-
 ◾安装搜索指示器:
 sudo apt-add-repository ppa:elementary-os/unstable-upstream
 sudo apt-get install indicator-synapse
@@ -166,13 +144,6 @@ sudo apt-get install –no-install-recommends nautilus
 cerbere nautilus -n
 tweaks
 
-◾安装硬件监视器：
-sudo apt-get install psensor
-
-
-◾安装Gnome系统监视器：
-sudo apt-get install gnome-system-monitor
-
 
 ◾安装Shadowsocks-qt5：
 sudo add-apt-repository ppa:hzwhuang/ss-qt5
@@ -184,22 +155,6 @@ sudo apt-get install shadowsocks-qt5
 sudo add-apt-repository ppa:n-muench/programs-ppa
 sudo apt-get update
 sudo apt-get install bleachbit
-
-
-安装Gdeb：
-sudo apt-get install gdebi
-
-
-◾安装Firefox：
-sudo apt-get install firefox
-
-
-◾安装Chrome：
-官网安装。`-stable`
-
-
-安装VLC：
-sudo apt-get install vlc
 
 
 ◾安装Brackets：
@@ -296,15 +251,11 @@ sudo /usr/share/doc/libdvdread4/install-css.s­
 
 
 ◾禁用访客模式
-cd /usr/share/lightdm/lightdm.conf.d/
-sudo vim 50-no-guest.conf
+sudo vim /usr/share/lightdm/lightdm.conf.d/50-no-guest.conf
 将以下内容添加进这个文件（系统默认没有这个文件）
 [SeatDefaults]
-allow-guest=falsen
+allow-guest=false
 :wq保存退出，重启即可完成
-或者使用一句代码：
-sudo sh -c 'printf "[SeatDefaults]nallow-guest=falsen" >/usr/share/lightdm/lightdm.conf.d/50-no-guest.conf'
-来完成，执行完后重启即可
 
 
 ◾ 禁用错误报告：
@@ -327,12 +278,6 @@ NoDisplay=true
 sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily
 sudo apt-get update
 sudo apt-get install elementary-yo
-
-
-◾ numix是一款Linux最流行的图标主题，numix圆形图标主题包是numix图标主题之一。Numix Circle 已更新止0.2版本，
-sudo add-apt-repository ppa:numix/ppa
-sudo apt-get update
-sudo apt-get install numix-icon-theme-circle
 
 ◾ 网易云音乐最小化托盘问题 
 然后把原来的Exec那行改为：Exec=env XDG_CURRENT_DESKTOP=Unity netease-cloud-music %U
