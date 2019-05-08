@@ -1,33 +1,17 @@
-# Alic_env
-开发者常用脚本sh
+# AShell Tool
+O(∩_∩)O哈哈~，仓库一去不复返。
 
-# 开发者常用工具集成shell安装
-Use
-`sudo chmod 777 ./run.sh && sudo ./run.sh`
-![image](https://github.com/alicance/Alic_env/raw/master/images/dever_Info.png)
-# shell更新host
-Use     
-extraConfig为你额外需要在/etc/hosts里面添加的DNS解析的配置       
-`sudo chmod 777 ./hosts.sh && sudo ./hosts.sh`
+嗯~可以查看[**那个程序员的Linux常用软件清单**](<https://github.com/alicfeng/note.samego.com/blob/master/Linux/%E9%82%A3%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95.md>) |[**我的笔记**](<https://github.com/alicfeng/note.samego.com>)
 
+# 开发者常用工具集成shell使用
 
-# 一键搭建LAMP开发环境【Apache2+MySQL+PHP5】
-Use     
-`sudo chmod 777 ./onekey.sh && sudo ./onekey.sh`
+```shell
+➜ bash ./dever/AShellTools.sh
+```
+
+![image](https://github.com/alicfeng/AShell/raw/master/files/images/AShellTools.png)
 
 
-# 初始化EOS
-Use     
-`sudo chmod 777 ./initeos.sh && sudo ./initeos.sh`
-
-# Python常用依赖包
-Use     
-`sudo chmod 777 ./run.sh && sudo ./run.sh`
-
-# 编程相关资料
-ElementaryOS相关资料
-
-# 持续更新~~~
-
+# 
 
 
