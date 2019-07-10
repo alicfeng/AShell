@@ -1,0 +1,8 @@
+# 显示行数
+set number
+
+# 高亮显示
+syntax on
+
+# 文件类型识别
+filetype on

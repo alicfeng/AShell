@@ -1,0 +1,70 @@
+version: '3'
+services:
+  # web server
+  nginx:
+    container_name: nginx
+    image: nginx:alpine
+    ports:
+      - 9990:80
+      - 9991:9991
+      #- 443:443
+    volumes:
+      # www
+      - /Users/alicfeng/www/:/www/
+      # configure
+      - /Users/alicfeng/tutorial/github/Alic_env/docker/lnmp/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /Users/alicfeng/tutorial/github/Alic_env/docker/lnmp/nginx/conf.d/hosts/:/etc/nginx/conf.d/:ro
+      # certificates
+      # - ./server.crt/:/etc/nginx/server.crt:ro
+      # - ./server.key/:/etc/nginx/server.key:ro
+    links:
+      - fpm:__DOCKER_PHP_FPM__
+
+  # php-fpm
+  fpm:
+    container_name: php7.2
+    image: php:7.2-fpm
+    ports:
+      - 9100:9000
+    volumes:
+      - /Users/alicfeng/www/:/www/
+      # Your php.ini
+      - /Users/alicfeng/tutorial/github/Alic_env/docker/lnmp/php-fpm/php.ini:/usr/local/etc/php/php.ini:ro
+    # environment:
+      # Set your APP env variables here:
+      # - APP_KEY=
+      # - DB_HOST=
+      # - DB_DATABASE=
+      # - DB_USERNAME=
+      # - DB_PASSWORD=
+    links:
+      - mysql:mysql
+
+  # database
+  mysql:
+    container_name: mysql
+    image: mysql:5.6
+    ports:
+      - 3308:3306
+    volumes:
+      - /Users/alicfeng/data/docker/mysql:/var/lib/mysql
+      - /Users/alicfeng/tutorial/github/Alic_env/docker/lnmp/mysql/my.cnf:/etc/mysql/my.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: fenglican
+      MYSQL_USER: samego
+      MYSQL_PASSWORD: samego
+      MYSQL_DATABASE: 
+      
+  # redis  
+  redis:
+    container_name: redis
+    image: redis:alpine
+    volumes:
+      - /Users/alicfeng/data/docker/redis:/data
+    ports:
+      - 6379:6379
+    command: redis-server --appendonly yes
+    restart: always
+
+
+
